@@ -7,7 +7,7 @@ return (
         <div className="md:w-1/2 mb-10 md:mb-0">
         <Image
           className="dark:invert w-full h-auto rounded-lg shadow-lg"
-          src="/Tracker-2.jpeg"
+          src="/Tracker-2.png"
           alt="Product tracking illustration"
           width={200}
           height={200}

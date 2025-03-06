@@ -6,10 +6,9 @@ import Head from 'next/head';
 import Layout from '../components/layout/Layout';
 import Hero from '../components/home/Hero';
 import SearchBar from '../components/home/SearchBar';
-// import AuthModal from '../components/auth/AuthModal';
+import { AuthProvider } from '../context/AuthContext';
 
 export default function Home() {
-  // const [showAuthModal, setShowAuthModal] = useState(false);
   
   return (
     <Layout>
@@ -17,13 +16,11 @@ export default function Home() {
         <title>Tracker - Find the best deals on refurbished devices</title>
         <meta name="description" content="Track prices, compare deals, and get AI-powered recommendations for refurbished devices." />
       </Head>
+      <AuthProvider>
       
       <Hero />
       <SearchBar />
-      
-      {/* {showAuthModal && (
-        <AuthModal onClose={() => setShowAuthModal(false)} />
-      )} */}
+      </AuthProvider>
     </Layout>
   );
 }
