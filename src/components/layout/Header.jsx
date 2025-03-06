@@ -22,13 +22,13 @@ export default function Header() {
                 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex space-x-10">
-                    <Link href="/" className="text-white hover:text-gray-200 mx-4">
+                    <Link href="#" className="text-white hover:text-gray-200 mx-4">
                         Home
                     </Link>
-                    <Link href="/products" className="text-white hover:text-gray-200 mx-4">
+                    <Link href="#" className="text-white hover:text-gray-200 mx-4">
                         Products
                     </Link>
-                    <Link href="/track-prices" className="text-white hover:text-gray-200 mx-4">
+                    <Link href="#" className="text-white hover:text-gray-200 mx-4">
                         Track Prices
                     </Link>
                 </nav>
@@ -59,13 +59,13 @@ export default function Header() {
             {showMenu && (
                 <div className="md:hidden mt-4">
                     <nav className="flex flex-col space-y-4">
-                        <Link href="/" className="text-white hover:text-gray-200">
+                        <Link href="#" className="text-white hover:text-gray-200">
                             Home
                         </Link>
-                        <Link href="/products" className="text-white hover:text-gray-200">
+                        <Link href="#" className="text-white hover:text-gray-200">
                             Products
                         </Link>
-                        <Link href="/track-prices" className="text-white hover:text-gray-200">
+                        <Link href="#" className="text-white hover:text-gray-200">
                             Track Prices
                         </Link>
                     </nav>

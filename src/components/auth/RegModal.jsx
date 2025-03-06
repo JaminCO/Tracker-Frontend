@@ -33,7 +33,7 @@ export default function AuthModal({ onClose }) {
             <AuthForm />
             <p className="mt-4 text-center text-gray-600">
               Already have an account? {' '}
-              <a href="/signup" className="text-indigo-600 hover:text-indigo-800">
+              <a href="#" className="text-indigo-600 hover:text-indigo-800">
               Login
             </a>
             </p>
