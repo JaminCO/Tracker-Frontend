@@ -85,7 +85,7 @@ export default function Header() {
 
             {/* Profile Menu */}
             {showProfile && (
-                <div className="absolute right-5 lg:right-20 mt-2 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 z-10">
+                <div className="absolute right-25 lg:right-20 mt-2 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 z-10">
                     <div className="py-1">
                         <button onClick={() => setShowRegModal(true)} className=" cursor-pointer block px-4 py-2 text-sm text-white hover:bg-gray-700">
                             Signup
