@@ -1,6 +1,5 @@
 "use client"
 
-
 import { useState } from 'react';
 import Head from 'next/head';
 import Layout from '../components/layout/Layout';
@@ -9,7 +8,7 @@ import SearchBar from '../components/home/SearchBar';
 import { AuthProvider } from '../context/AuthContext';
 
 export default function Home() {
-  
+
   return (
     <Layout>
       <Head>
@@ -17,9 +16,8 @@ export default function Home() {
         <meta name="description" content="Track prices, compare deals, and get AI-powered recommendations for refurbished devices." />
       </Head>
       <AuthProvider>
-      
-      <Hero />
-      <SearchBar />
+        <Hero />
+        <SearchBar />
       </AuthProvider>
     </Layout>
   );

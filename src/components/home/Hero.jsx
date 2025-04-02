@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Hero() {
 return (
-    <section className="flex flex-col md:flex-row items-center justify-between py-12 md:py-20 lg:px-15">
+    <section className="flex flex-col md:flex-row items-center justify-between py-12 md:py-20 lg:px-15 ">
         <div className="md:w-1/2 mb-10 md:mb-0">
         <Image
           className="dark:invert w-full h-auto rounded-lg shadow-lg"
