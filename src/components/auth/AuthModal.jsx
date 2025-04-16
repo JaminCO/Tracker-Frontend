@@ -1,9 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Modal from '../ui/Modal';
 import AuthForm from './AuthForm';
 import { X } from 'lucide-react';
 
-export default function AuthModal({ onClose }) {
+export default function AuthModal({ onClose, initialMode = 'login' }) {
+  const [mode, setMode] = useState(initialMode);
+  const [successMessage, setSuccessMessage] = useState('');
+
+  const toggleMode = () => {
+    setMode(prev => prev === 'login' ? 'signup' : 'login');
+    setSuccessMessage('');
+  };
+
+  // Handle success message from AuthForm
+  const handleSuccess = (message) => {
+    setSuccessMessage(message);
+    
+    // Auto-close the modal after successful signup after a delay
+    if (mode === 'signup' && message) {
+      setTimeout(() => {
+        onClose();
+      }, 2000); // Close after 2 seconds
+    }
+  };
+
   return (
     <Modal onClose={onClose}>
       <div className="bg-white rounded-2xl overflow-hidden flex flex-col md:flex-row">
@@ -28,14 +48,31 @@ export default function AuthModal({ onClose }) {
           
           <div className="mt-2 md:mt-4 px-2 md:px-6">
             <h2 className="text-lg md:text-2xl font-semibold text-gray-700 mb-6 md:mb-8">
-              Welcome back
+              {mode === 'login' ? 'Welcome back' : 'Create an account'}
             </h2>
-            <AuthForm />
+            <AuthForm mode={mode} onSuccess={handleSuccess} />
             <p className="mt-3 md:mt-4 text-sm md:text-base text-center text-gray-600">
-              Don't have an account? {' '}
-              <a href="#" className="text-indigo-600 hover:text-indigo-800">
-              Create an Account
-            </a>
+              {mode === 'login' ? (
+                <>
+                  Don't have an account?{' '}
+                  <button
+                    onClick={toggleMode}
+                    className="text-indigo-600 hover:text-indigo-800 font-medium"
+                  >
+                    Create an Account
+                  </button>
+                </>
+              ) : (
+                <>
+                  Already have an account?{' '}
+                  <button
+                    onClick={toggleMode}
+                    className="text-indigo-600 hover:text-indigo-800 font-medium"
+                  >
+                    Sign In
+                  </button>
+                </>
+              )}
             </p>
           </div>
         </div>
