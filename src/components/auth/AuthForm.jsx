@@ -83,7 +83,7 @@ export default function AuthForm({ mode = 'login', onSuccess }) {
     setLoading(true);
     try {
       const endpoint = mode === 'login' ? '/api/login' : '/api/register';
-      const response = await axios.post(`http://127.0.0.1:5000${endpoint}`, {
+      const response = await axios.post(`https://tracker-api-lojg.onrender.com${endpoint}`, {
         email: formData.email,
         password: formData.password,
         ...(mode === 'signup' && { username: formData.username })

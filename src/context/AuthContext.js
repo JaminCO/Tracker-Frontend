@@ -45,6 +45,7 @@ export function AuthProvider({ children }) {
     setUser(userData);
     localStorage.setItem('user', JSON.stringify(userData));
     localStorage.setItem('token', token);
+    router.push('/#');
   };
 
   const logout = () => {

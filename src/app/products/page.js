@@ -31,7 +31,7 @@ export default function PhoneTrackerPage() {
     const fetchPhones = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://127.0.0.1:5000/api/scrape?device_name=${deviceName}`);
+        const response = await axios.get(`https://tracker-api-lojg.onrender.com/api/scrape?device_name=${deviceName}`);
         
         if (response.status !== 200) {
           throw new Error('Failed to fetch data');
