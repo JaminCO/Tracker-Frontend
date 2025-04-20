@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { Heart, User } from 'lucide-react';
 import Layout from '../../components/layout/Layout';
 import { useSearchParams } from 'next/navigation';
 import axios from 'axios'; // Import axios at the top
+import Image from 'next/image';
 
 const LoadingSpinner = () => {
   return (
@@ -20,7 +21,7 @@ const LoadingSpinner = () => {
   );
 };
 
-export default function PhoneTrackerPage() {
+function ProductsPageContent() {
   const searchParams = useSearchParams();
   const deviceName = searchParams.get('device') || 'samsung galaxy s24 ultra';
   const [phones, setPhones] = useState([]);
@@ -125,9 +126,11 @@ export default function PhoneTrackerPage() {
                 <div className="text-center mb-2">
                   <span className="text-3xl font-bold">£{phone.price}</span>
                 </div>
-                <img 
+                <Image 
                   src={phone.image} 
                   alt={phone.name} 
+                  width={300} 
+                  height={300} 
                   className="w-full h-64 object-contain mb-4"
                 />
                 <div className="text-center">
@@ -148,5 +151,13 @@ export default function PhoneTrackerPage() {
         )}
       </div>
     </Layout>
+  );
+}
+
+export default function PhoneTrackerPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ProductsPageContent />
+    </Suspense>
   );
 }
