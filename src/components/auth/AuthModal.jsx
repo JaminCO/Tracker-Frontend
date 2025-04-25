@@ -1,26 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Modal from '../ui/Modal';
 import AuthForm from './AuthForm';
 import { X } from 'lucide-react';
 
-export default function AuthModal({ onClose, initialMode = 'login' }) {
+export default function AuthModal({ onClose, initialMode = 'login', onSuccess }) {
   const [mode, setMode] = useState(initialMode);
-  const [successMessage, setSuccessMessage] = useState('');
 
   const toggleMode = () => {
     setMode(prev => prev === 'login' ? 'signup' : 'login');
     setSuccessMessage('');
   };
 
+  
   // Handle success message from AuthForm
   const handleSuccess = (message) => {
-    setSuccessMessage(message);
-    
-    // Auto-close the modal after successful signup after a delay
-    if (mode === 'signup' && message) {
-      setTimeout(() => {
-        onClose();
-      }, 2000); // Close after 2 seconds
+    // Close modal immediately on success
+    onClose();
+    if (onSuccess) {
+      onSuccess(message);
     }
   };
 

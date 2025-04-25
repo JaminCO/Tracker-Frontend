@@ -112,8 +112,11 @@ export default function AuthButton() {
         <AuthModal 
           onClose={() => setShowAuthModal(false)}
           initialMode={authMode}
+          onSuccess={() => {
+            setShowAuthModal(false);
+          }}
         />
       )}
     </div>
   );
-} 
+}

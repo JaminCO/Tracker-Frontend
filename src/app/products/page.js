@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, Suspense } from 'react';
-import { Heart, User } from 'lucide-react';
 import Layout from '../../components/layout/Layout';
 import { useSearchParams } from 'next/navigation';
 import axios from 'axios'; // Import axios at the top
