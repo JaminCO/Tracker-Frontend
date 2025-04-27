@@ -12,7 +12,7 @@ export default function Header() {
         <header>
             {/* Desktop Navigation */}
             <nav className="flex justify-between items-center px-6 py-4 text-white">
-                <div className="text-xl font-bold">Trackr</div>
+                <div className="text-xl font-bold"><a href="/" Trackr</a></div>
                 <div className="hidden md:flex space-x-4">
                     <Link href="/" className="hover:text-gray-300">Home</Link>
                     <Link href="#" className="hover:text-gray-300">Products</Link>
