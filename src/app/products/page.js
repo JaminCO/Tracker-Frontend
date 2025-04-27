@@ -22,7 +22,7 @@ const LoadingSpinner = () => {
 
 function ProductsPageContent() {
   const searchParams = useSearchParams();
-  const deviceName = searchParams.get('device') || 'samsung galaxy s24 ultra';
+  const deviceName = searchParams.get('device') || 'Samsung Galaxy s23';
   const [phones, setPhones] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -119,9 +119,9 @@ function ProductsPageContent() {
                     Best Price
                   </div>
                 )}
-                {/* <div className="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 rounded">
+                 <div className="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 rounded">
                   {phone.vendor}
-                </div> */}
+                </div>
                 <div className="text-center mb-2">
                   <span className="text-3xl font-bold">£{phone.price}</span>
                 </div>
