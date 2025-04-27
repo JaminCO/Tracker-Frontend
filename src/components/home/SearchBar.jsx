@@ -20,7 +20,7 @@ return (
         <input
             type="text"
             className="w-full bg-black bg-opacity-80 text-white rounded-full py-3 sm:py-5 px-12 sm:px-16 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30 placeholder-gray-400 border border-white"
-            placeholder="Samsung Galaxy S24 Ultra"
+            placeholder="Iphone 13"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
         /> <button 
