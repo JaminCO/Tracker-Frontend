@@ -31,7 +31,7 @@ function ProductsPageContent() {
     const fetchPhones = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`https://tracker-api-lojg.onrender.com/api/scrape?device_name=${deviceName}`);
+        const response = await axios.get(`https://web-production-42176.up.railway.app/api/scrape?device_name=${deviceName}`);
         
         if (response.status !== 200) {
           throw new Error('Failed to fetch data');
@@ -90,7 +90,7 @@ function ProductsPageContent() {
         {/* Phones Title */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-2">Phones</h1>
-          <div className="h-1 bg-yellow-400 w-104 mx-auto"></div>
+          <div className="h-1 bg-yellow-400 w-ful mx-auto"></div>
         </div>
 
         {loading ? (
@@ -119,9 +119,9 @@ function ProductsPageContent() {
                     Best Price
                   </div>
                 )}
-                <div className="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 rounded">
+                {/* <div className="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 rounded">
                   {phone.vendor}
-                </div>
+                </div> */}
                 <div className="text-center mb-2">
                   <span className="text-3xl font-bold">£{phone.price}</span>
                 </div>
