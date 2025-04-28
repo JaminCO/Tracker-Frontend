@@ -22,7 +22,7 @@ const LoadingSpinner = () => {
 
 function ProductsPageContent() {
   const searchParams = useSearchParams();
-  const deviceName = searchParams.get('device') || 'Samsung Galaxy s23';
+  const deviceName = searchParams.get('device') || 'iphone 13';
   const [phones, setPhones] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -31,6 +31,7 @@ function ProductsPageContent() {
     const fetchPhones = async () => {
       try {
         setLoading(true);
+        // https://web-production-42176.up.railway.app
         const response = await axios.get(`https://web-production-42176.up.railway.app/api/scrape?device_name=${deviceName}`);
         
         if (response.status !== 200) {
@@ -47,7 +48,7 @@ function ProductsPageContent() {
           transformedPhones.push({
             name: data.best.title,
             price: parseFloat(data.best.price),
-            specs: '6.8 Inch Quad HD 200 MP 12 GB RAM 256 GB Android 14 5,000 mAh', // This would come from API in a real app
+            specs: data.best.specs,
             image: data.best.image_url,
             bestPrice: true,
             vendor: data.best.vendor,
@@ -61,7 +62,8 @@ function ProductsPageContent() {
             transformedPhones.push({
               name: product.title,
               price: parseFloat(product.price),
-              specs: '6.8 Inch Quad HD 200 MP 12 GB RAM 256 GB Android 14 5,000 mAh', // This would come from API in a real app
+              specs: " ",
+              // '6.8 Inch Quad HD 200 MP 12 GB RAM 256 GB Android 14 5,000 mAh', // This would come from API in a real app
               image: product.image_url,
               bestPrice: false,
               vendor: product.vendor,
@@ -119,7 +121,7 @@ function ProductsPageContent() {
                     Best Price
                   </div>
                 )}
-                 <div className="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 rounded">
+                <div className="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 rounded">
                   {phone.vendor}
                 </div>
                 <div className="text-center mb-2">
