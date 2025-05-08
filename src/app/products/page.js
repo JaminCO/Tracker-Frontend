@@ -112,7 +112,7 @@ function ProductsPageContent() {
               <div 
                 key={index} 
                 className={`
-                  bg-white rounded-lg shadow-lg p-4 relative
+                  bg-white rounded-lg shadow-lg p-4 relative flex flex-col justify-between
                   ${phone.bestPrice ? 'border-4 border-yellow-400' : ''}
                 `}
               >
@@ -127,16 +127,18 @@ function ProductsPageContent() {
                 <div className="text-center mb-2">
                   <span className="text-3xl font-bold">£{phone.price}</span>
                 </div>
-                <Image 
-                  src={phone.image} 
-                  alt={phone.name} 
-                  width={300} 
-                  height={300} 
-                  className="w-full h-64 object-contain mb-4"
-                />
-                <div className="text-center">
-                  <h2 className="text-xl font-bold">{phone.name}</h2>
-                  <p className="text-gray-600 mt-2">{phone.specs}</p>
+                <div className="flex justify-center">
+                  <Image 
+                    src={phone.image} 
+                    alt={phone.name} 
+                    width={300} 
+                    height={300} 
+                    className="w-full h-64 object-contain mb-4"
+                  />
+                </div>
+                <div className="flex flex-col items-center">
+                  <h2 className="text-xl font-bold text-center">{phone.name}</h2>
+                  <p className="text-gray-600 mt-2 text-center ">{phone.specs}</p>
                   <a 
                     href={phone.url} 
                     target="_blank" 
